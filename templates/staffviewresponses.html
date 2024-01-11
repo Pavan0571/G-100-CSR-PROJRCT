@@ -1,0 +1,78 @@
+{% include 'staffheader.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% block content %}
+<!-- about section -->
+<style type="text/css">
+    table,tr,th,td
+    {
+        font-name:arial;
+        border:1px solid black;
+        border-collapse:collapse;
+    }
+    table{
+    width:100%;
+    }
+    th,td
+    {
+    width:200px;
+    height:50px;
+    text-align:center;
+    font-family:verdana;
+    }
+
+    </style>
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Staff View <span>Responses Page</span>
+              </h2>
+            </div>
+            <p>
+<table>
+                    <thead>
+                    <tr>
+                        <th>Response Id</th>
+                        <th>Event Name</th>
+                        <th>Event Type</th>
+                        <th>Event Date</th>
+                        <th>EmailId</th>
+                        <th>Phone Number</th>
+                        <th>Description</th>
+                        <th>User Id</th>
+                        <th>User Comments</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.EventName}}</td>
+                        <td>{{row.EventType}}</td>
+                        <td>{{row.EventDate}}</td>
+                        <td>{{row.ContactEmailId}}</td>
+                        <td>{{row.ContactPhoneNumber}}</td>
+                        <td>{{row.Description}}</td>
+                        <td>{{row.UserId}}</td>
+                        <td>{{row.Comments}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+{% endblock %}
+</body>
+</html>

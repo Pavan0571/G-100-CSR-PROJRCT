@@ -1,0 +1,4 @@
+pandas
+flask
+firebase_admin
+numpy

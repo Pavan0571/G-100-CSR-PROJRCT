@@ -1,0 +1,72 @@
+{% include 'adminheader.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+{% block content %}
+  <!-- about section -->
+<style type="text/css">
+    table,tr,th,td
+    {
+        font-name:arial;
+        border:1px solid black;
+        border-collapse:collapse;
+    }
+    table{
+    width:100%;
+    }
+    th,td
+    {
+    width:200px;
+    height:50px;
+    text-align:center;
+    font-family:verdana;
+    }
+</style>
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Admin View <span>Contacts Page</span>
+              </h2>
+            </div>
+            <p>
+<table>
+                    <thead>
+                    <tr>
+                        <th>Contact Id</th>
+                        <th>Contact Name</th>
+                        <th>EmailId</th>
+                        <th>Phone Number</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.ContactName}}</td>
+                        <td>{{row.EmailId}}</td>
+                        <td>{{row.PhoneNumber}}</td>
+                        <td>{{row.Subject}}</td>
+                        <td>{{row.Message}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+{% endblock %}
+</body>
+</html>

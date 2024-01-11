@@ -1,0 +1,83 @@
+{% include 'staffheader.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+{% block content %}
+  <!-- about section -->
+<style type="text/css">
+table {
+	width: 75%;
+	color: black;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+tr, td, th {
+	border: 1px solid black;
+	font-size:16px;
+}
+</style>
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                NGO <span>View Profile Page</span>
+              </h2>
+            </div>
+            <p>
+                  <table>
+                      <tr>
+                          <th>NGO Id : </th>
+                          <td>
+                              {{data['id']}}
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>NGO Name : </th>
+                          <td>
+                              {{data['NGOName']}}
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Email Id : </th>
+                          <td>
+                              {{data['EmailId']}}
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Phone Number : </th>
+                          <td>
+                              {{data['PhoneNumber']}}
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Address : </th>
+                          <td>
+                              {{data['Address']}}
+                          </td>
+                      </tr>
+                  </table>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="/static/img/Pic2.jpg" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+{% endblock %}
+</body>
+</html>

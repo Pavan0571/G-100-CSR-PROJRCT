@@ -1,0 +1,96 @@
+{% include 'userheader.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% block content %}
+  <!-- contact section -->
+  <section class="contact_section layout_padding-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+          <div class="heading_container">
+            <h2>
+              User Add Response to a Events Page
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+          <div class="form_container">
+            {{msg}}
+            <form action="/userapplyresponse1" method="post">
+              <div>
+                <input type="text" placeholder="Event Id" name="eid" required readonly
+                value="{{data['id']}}"/>
+              </div>
+              <div>
+                <input type="text" placeholder="Event Name" name="ename" required readonly
+                value="{{data['EventName']}}"/>
+              </div>
+              <div>
+               <input type="text" placeholder="Event Type" name="etype" required readonly
+               value="{{data['EventType']}}"/>
+               <!-- <select name="etype" style="width:410px; height:30px;">
+                  <option>GetTogether</option>
+                  <option>Farewell</option>
+                  <option>Project Discussion</option>
+                  <option>Others</option>
+                </select>-->
+              </div>
+              <div>
+                <br>
+                <input type="text" placeholder="Location" name="location" readonly
+                value="{{data['Location']}}"/>
+                <!--<select name="location" style="width:410px; height:30px;">
+                  <option>Bangalore</option>
+                  <option>Mangalore</option>
+                  <option>Mysore</option>
+                  <option>Mumbai</option>
+                </select>-->
+              </div>
+              <div>
+                <br>
+                <input type="email" placeholder="Contact Email Id" name="email" required readonly
+                value="{{data['ContactEmailId']}}"/>
+              </div>
+              <div>
+                <input type="text" placeholder="Contact Phone Number" name="phnum" pattern="[0-9]{10}"
+                maxlength="10"  required readonly value="{{data['ContactPhoneNumber']}}"/>
+              </div>
+              <div>
+                <input type="text" placeholder="Event Date" name="edate" required readonly
+                value="{{data['EventDate']}}"/>
+              </div>
+              <div>
+                <textarea name="description" placeholder="Description" rows="5" cols="45"  required readonly>
+                  {{data['Description']}}
+                </textarea>
+              </div>
+              <div>
+                <textarea name="comments" placeholder="Comments" rows="5" cols="45"  required>
+                </textarea>
+              </div>
+              <div class="btn_box">
+                <br>
+                <input type="submit" value="Apply Response">
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--<div class="col-lg-7 col-md-6 px-0">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap"></div>
+            </div>
+          </div>
+        </div>-->
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+{% endblock %}
+</body>
+</html>
